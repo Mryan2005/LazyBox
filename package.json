@@ -15,6 +15,10 @@
     "commands": [{
       "command": "lazybox.helloWorld",
       "title": "Hello World"
+    }],
+    "commands": [{
+      "command": "lb.c",
+      "title": "Create a C file"
     }]
   },
   "scripts": {

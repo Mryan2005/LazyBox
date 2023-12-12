@@ -21,10 +21,42 @@ function activate(context) {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from LazyBox!');
+		vscode.window.showInformationMessage('Perfect! I create a new file for you!');
+		//create a new file in the workspace and open it
+		// get date and time
+		var date = new Date();
+		var year = date.getFullYear();
+		var month = date.getMonth()+1;
+		var day = date.getDate();
+		var hour = date.getHours();
+		var min = date.getMinutes();
+		var sec = date.getSeconds();
+		var time = year + '-' + month + '-' + day + '-' + hour + '-' + min + '-' + sec;
+		vscode.workspace.openTextDocument(vscode.Uri.parse('untitled:'+time+'.c')).then(doc => {
+			vscode.window.showTextDocument(doc, vscode.ViewColumn.One, true);
+		});
 	});
-
 	context.subscriptions.push(disposable);
+	let disposable1 = vscode.commands.registerCommand('lb.c', function () {
+		// The code you place here will be executed every time your command is executed
+
+		// Display a message box to the user
+		vscode.window.showInformationMessage('Perfect! I create a new file for you!');
+		//create a new file in the workspace and open it
+		// get date and time
+		var date = new Date();
+		var year = date.getFullYear();
+		var month = date.getMonth()+1;
+		var day = date.getDate();
+		var hour = date.getHours();
+		var min = date.getMinutes();
+		var sec = date.getSeconds();
+		var time = year + '-' + month + '-' + day + '-' + hour + '-' + min + '-' + sec;
+		vscode.workspace.openTextDocument(vscode.Uri.parse('untitled:'+time+'.c')).then(doc => {
+			vscode.window.showTextDocument(doc, vscode.ViewColumn.One, true);
+		});
+	});
+	context.subscriptions.push(disposable1);
 }
 
 // This method is called when your extension is deactivated
